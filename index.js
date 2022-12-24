@@ -18,7 +18,7 @@ if (!existsSync(join(__dirname, "bin"))) {
   mkdirSync(binPath);
 };
 
-app.get("/:fileid", (req, res) => {
+app.get(["/", "/:fileid"], (req, res) => {
   const fileID = req?.params?.fileid;
   if (!fileID?.length) return res.sendStatus(200);
 
