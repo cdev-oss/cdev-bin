@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const Express = require('express');
+const {text} = require('express');
 const app = Express();
 const {existsSync, mkdirSync, promises} = require("fs");
 const {writeFile} = promises;
@@ -30,7 +31,7 @@ app.get(["/", "/:fileid"], (req, res) => {
   })
 });
 
-app.post("/", async (req, res) => {
+app.post("/", text({ type: "text/plain", inflate: true }), async (req, res) => {
   // we use auth for this one, just in case
   if (!req.headers.authorization || req.headers.authorization !== process.env.SECRET) {
     return res.sendStatus(403);
