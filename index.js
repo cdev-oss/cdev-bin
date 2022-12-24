@@ -65,7 +65,7 @@ function getPseudoRandomNumber(min, max) {
 };
 
 function randomID() {
-  let length = getPseudoRandomNumber(6, 20);
+  let length = getPseudoRandomNumber(4, 16);
   let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
   let retVal = "";
 
