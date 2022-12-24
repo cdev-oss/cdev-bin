@@ -1,4 +1,4 @@
 node_modules/**/*
 package-lock.json
-bin/*.txt
+bin/**
 *.env
