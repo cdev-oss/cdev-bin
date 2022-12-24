@@ -15,7 +15,7 @@ app.use(helmet()).use(CORS());
 
 // create bin folder
 const binPath = join(__dirname, "bin");
-if (!existsSync(join(__dirname, "bin"))) {
+if (!existsSync(binPath)) {
   mkdirSync(binPath);
 };
 
